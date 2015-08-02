@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tcs -w & webpack --progress --colors --watch & nodemon src/server/index.js",
+    "start": "tsc -w -p ./ & webpack --progress --colors --watch & nodemon src/server/index.js",
+    "deps": "npm install && tsd install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,10 +16,10 @@
     "handlebars": "^3.0.3",
     "handlebars-loader": "^1.1.0",
     "hapi": "^8.8.1",
+    "tsd": "^0.6.3",
     "webpack": "^1.10.5"
   },
   "devDependencies": {
-    "nodemon": "^1.4.0",
-    "typescript": "^1.5.3"
+    "nodemon": "^1.4.0"
   }
 }

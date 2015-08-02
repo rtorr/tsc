@@ -10,6 +10,7 @@ server.views({
     engines: {
         html: require('handlebars')
     },
+    layout: true,
     relativeTo: __dirname,
     path: './../templates',
     layoutPath: './../templates/layout',
@@ -21,6 +22,16 @@ server.route({
     path: '/',
     handler: function (request, reply) {
         reply.view('index');
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/public/{param*}',
+    handler: {
+        directory: {
+            path: Path.join(__dirname, './../../public/'),
+        }
     }
 });
 
